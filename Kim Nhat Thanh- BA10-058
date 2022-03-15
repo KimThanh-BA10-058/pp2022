@@ -1,0 +1,66 @@
+StudentList = []
+student = {
+    "id": None,
+    "name": None,
+    "DoB": None
+}
+
+def addStudent():
+    numStudent = input("How many students ?")
+    for i in range(int(numStudent)):
+        student = {
+            "id": input("id: "),
+            "name": input("name: "),
+            "DoB": input("DoB: ")
+        }
+        StudentList.append(student)
+
+
+def listStudent():
+    print("There are %s students in the class" % len(StudentList))
+    for i in StudentList:
+        print("Student info: ", i)
+
+
+CourseList = []
+course = {
+    "id": None,
+    "name": None
+}
+
+
+def addCourse():
+    numCourse = input("How many courses are there in the semester ?")
+    for i in range(int(numCourse)):
+        course = {
+            "id": input("id: "),
+            "name": input("name: ")
+        }
+        CourseList.append(course)
+
+
+def listCourse():
+    print("There are %s courses in the semester" % len(CourseList))
+    for i in CourseList:
+        print("course info", i)
+
+
+mark = []
+
+
+def getData(self, id, name, mark1, mark2):
+    student.name = name
+    student.id = id
+    student.marks.append(mark1)
+    student.marks.append(mark2)
+
+
+def displayData(self):
+    print("Student name: ", student.name)
+    print("ID: ", student.id)
+    print("Mark in subject %d: ", student.marks[0])
+
+
+if __name__ == "__main__":
+    addCourse()
+    listCourse()
