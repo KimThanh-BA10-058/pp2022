@@ -1,0 +1,83 @@
+# OOP STUDENT
+
+class Student:
+  def addStudentDetails (self, id ,name, Dob):
+    self._name = name
+    self._DoB = Dob
+    self.id = id
+    return self
+
+  def addStudent(self):
+    studentList.append(self)
+
+  def __str__(self):
+    attrs = vars(self)
+    return ', '.join("%s: %s" % item for item in attrs.items())
+
+def inputListOfStudents():
+  numberOfStudent = int(input("Number of student: "))
+  print("Input student info: ")
+  for i in range(numberOfStudent):
+    print("Student", i+1)
+    student = Student()
+    student.addStudentDetails(input("Student ID: "), input("Student Name: "), input("Student DoB: "))
+    student.addStudent()
+def showListStudents():
+  for student in studentList:
+    print(student)
+inputListOfStudents()
+showListStudents()
+    
+    
+#OOP course:
+class Course: 
+  def addCourseDetails(self, id, name):
+    self._name = name
+    self.id = id
+    return self
+
+  def addCourse(self):
+    courseList.append(self)
+
+def __str__(self):
+    attrs = vars(self)
+    print('', '.join("%s: %s" % item for item in attrs.items())')
+
+def inputListOfCourses():
+  numberOfCourse = int(input("Number of course: "))
+  print("Input course info: ")
+  for i in range(numberOfCourse):
+    print("Course: ", i+1)
+    course = Course()
+    course.addCourseDetails(input("Course ID: "), input("Course Name: "))
+    course.addCourse()
+def showListCourses():
+  for course in courseList:
+    print(course)
+inputListOfCourses()
+showListCourses()
+
+class mark:
+def addMark():
+  for course in courseList: 
+    print("Enter mark for course ", course.get("name"))
+    for student in studentList:
+      studentName = student.get("name")
+      mark = {
+          "courseId": course.get("id"),
+          "studentId": student.get("id"),
+          "value": int(input(f"Mark for {studentName}: "))
+      }
+      markList.append(mark)
+
+def printAllMarksForSelectedCourse():
+  selectedCourse = getSelectCourse()
+  if selectedCourse:
+    for mark in markList:
+      if mark.get("courseId") == selectedCourse.get("id"): 
+        studentInfo = getStudentInfo(mark.get("studentId"))
+        print("Mark for student", studentInfo.get("name"), "in course: ", mark.get("value"))
+  else:
+    print("No course info")
+addmark()
+printAllMarksForSelectedCourse()
