@@ -57,27 +57,21 @@ def showListCourses():
 inputListOfCourses()
 showListCourses()
 
-class mark:
-def addMark():
-  for course in courseList: 
-    print("Enter mark for course ", course.get("name"))
+markList = list()
+class Mark:
+def select_course(courseList):
+  for course in courseList:
+    print(course)
+    courseId = input("Enter one of the ID from the course above: ")
+      return courseId
+def inputMark(courseId, studentList):
+  students = studentList
+    print(f"Enter mark of the course {courseId} for students")
+    for student in students:
+      Mark = float(input(f"- Enter the mark of student: {student['Student ID']}-{student['Student Name']}: "))
+      student['marks'][courseId] = Mark
+def displayMark(courseId, studentList):
+   print(f"This is the mark for the course {courseId}")
     for student in studentList:
-      studentName = student.get("name")
-      mark = {
-          "courseId": course.get("id"),
-          "studentId": student.get("id"),
-          "value": int(input(f"Mark for {studentName}: "))
-      }
-      markList.append(mark)
-
-def printAllMarksForSelectedCourse():
-  selectedCourse = getSelectCourse()
-  if selectedCourse:
-    for mark in markList:
-      if mark.get("courseId") == selectedCourse.get("id"): 
-        studentInfo = getStudentInfo(mark.get("studentId"))
-        print("Mark for student", studentInfo.get("name"), "in course: ", mark.get("value"))
-  else:
-    print("No course info")
-addmark()
-printAllMarksForSelectedCourse()
+      print(f"{student['Student ID']:<8} {student['Student Name']:<20} {student['marks'][courseId]:<10}")
+    
