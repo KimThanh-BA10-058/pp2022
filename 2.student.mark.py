@@ -4,7 +4,7 @@ courseList = list()
 markList = list()
 
 
-# add student function 
+# add student function
 
 def addStudent():
     numberOfStudent = int(input("Number of student: "))
